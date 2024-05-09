@@ -8,8 +8,8 @@ PROJECT(AML_NN_SDK)
 SET(INCLUDE_PATH ./nn_sdk)
 include_directories(${INCLUDE_PATH}/include ./include)
 
-SET(CMAKE_C_COMPILER aarch64-alpine-linux-musl-gcc)
-SET(CMAKE_CXX_COMPILER aarch64-alpine-linux-musl-g++)
+SET(CMAKE_C_COMPILER aarch64-linux-gnu-gcc)
+SET(CMAKE_CXX_COMPILER aarch64-linux-gnu-g++)
 SET(LINK_DIR ./nn_sdk/lib/lib64  ./)
 
 link_directories(${LINK_DIR})

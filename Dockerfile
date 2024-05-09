@@ -1,9 +1,8 @@
-FROM alpine:latest as build
-RUN apk add build-base cmake gdb
+FROM debian:latest as build
+RUN apt update && apt -y install build-essential cmake git
 ADD . build/
 WORKDIR /build
 RUN cmake . && make
-RUN apk add git
 RUN git clone https://github.com/sousmangoosta/frigate.git
 WORKDIR /build/frigate
 RUN git checkout adla_detector

@@ -50,7 +50,7 @@ int run_network(void *qcontext, unsigned int *detNum, dBox *pBox) {
 	aml_output_config_t outconfig;
 	memset(&outconfig, 0, sizeof(aml_output_config_t));
 
-	outconfig.format = AML_OUTDATA_FLOAT32;
+	outconfig.format = AML_OUTDATA_RAW;
 	outconfig.typeSize = sizeof(aml_output_config_t);
 	outconfig.order = AML_OUTPUT_ORDER_NHWC;
 

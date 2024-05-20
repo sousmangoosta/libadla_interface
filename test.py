@@ -4,7 +4,7 @@ import os
 from ctypes import *
 import time
 
-path = "../data/ssdlite_mobiledet_coco_int8.adla"
+path = "../data/ssdlite_mobiledet_coco_int8_vim4.adla"
 if path is None:
     raise ValueError("No model path provided")
 

@@ -7,8 +7,8 @@ RUN git clone https://github.com/sousmangoosta/frigate.git
 WORKDIR /build/frigate
 RUN git checkout adla_detector
 FROM ghcr.io/blakeblackshear/frigate:stable-standard-arm64
-RUN curl -LO https://github.com/numbqq/libadla_deb_aml/raw/main/jammy/arm64/libadla_0.6-202409_arm64.deb && \
-    dpkg -i libadla_0.6-202409_arm64.deb && rm -f libadla_0.6-202409_arm64.deb
+RUN curl -LO https://github.com/numbqq/libadla_deb_aml/raw/59fdd22d3a6f7ffca005c9fa229aac5004205d45/jammy/arm64/libadla_0.5-202406_arm64.deb && \
+    dpkg -i libadla_0.5-202406_arm64.deb && rm -f libadla_0.5-202406_arm64.deb
 COPY --from=build build/libadla_interface.so /usr/lib/aarch64-linux-gnu/
 COPY --from=build build/data/ssdlite_mobiledet_coco_int8_vim4.adla /
 COPY --from=build build/frigate/frigate/detectors/plugins/adla.py /opt/frigate/frigate/detectors/plugins/
